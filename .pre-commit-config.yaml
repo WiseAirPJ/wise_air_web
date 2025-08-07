@@ -1,0 +1,30 @@
+default_stages: [pre-commit]
+
+repos:
+  # JS/TS 코드 포맷터: Prettier
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.0.0
+    hooks:
+      - id: prettier
+        name: "🎨 react · Format with Prettier"
+        files: "\\.(js|jsx|ts|tsx|json|css|scss|md|html)$"
+
+  # JS/TS 린터: ESLint (로컬 ESLint 사용을 권장)
+  - repo: local
+    hooks:
+      - id: eslint
+        name: "🔍 react · Lint with ESLint"
+        entry: npx eslint
+        language: node
+        files: "\\.(js|jsx|ts|tsx)$"
+        pass_filenames: true
+
+  # TypeScript 타입 검사 (선택)
+  - repo: local
+    hooks:
+      - id: tsc
+        name: "🧠 react · Type check with tsc"
+        entry: npx tsc --noEmit
+        language: node
+        pass_filenames: false
+        always_run: true
