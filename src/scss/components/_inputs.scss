@@ -1,0 +1,61 @@
+@use "@/scss/base/color" as color;
+
+%common_input {
+  padding: 0.5rem;
+  background-color: color.$color-light-grey;
+  border: none;
+  width: 100%;
+  color: color.$color-font-grey;
+  border-radius: 6px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+%input_date {
+  font-family: inherit;
+
+  background-image: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::-webkit-calendar-picker-indicator,
+  &::-webkit-clear-button,
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+}
+
+%icon_input {
+  display: flex;
+  align-items: center;
+  background-color: color.$color-light-grey;
+  border-radius: 6px;
+  width: 100%;
+  height: 35px;
+  position: relative;
+
+  .icon_container {
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    color: color.$color-font-dark-grey;
+  }
+
+  select,
+  input {
+    @extend %common_input;
+    padding-left: 30px;
+
+    option {
+      padding: 0.5rem;
+    }
+  }
+
+  input[type="date"],
+  input[type="month"] {
+    @extend %input_date;
+  }
+}

@@ -1,0 +1,18 @@
+@use "@/scss/components/buttons" as buttons;
+
+.main_button {
+  @extend %main_button;
+}
+
+.hand_moving_button {
+  @extend %hand_moving_button;
+}
+
+.tab_button_wrap {
+  display: flex;
+  gap: 10px;
+
+  .tab_button {
+    @extend %tab_button;
+  }
+}

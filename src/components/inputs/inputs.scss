@@ -1,0 +1,17 @@
+@use "@/scss/components/inputs";
+
+.icon_select,
+.icon_input {
+  @extend %icon_input;
+
+  &.none_icon {
+    select,
+    input {
+      padding-left: 0.5rem;
+    }
+  }
+}
+
+.icon_input_container {
+  position: relative;
+}

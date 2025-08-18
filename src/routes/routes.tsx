@@ -1,4 +1,4 @@
-import LoginPage from "@/pages/main/LoginPage";
+import LoginPage from "@/pages/login/LoginPage";
 import MainPage from "@/pages/main/MainPage";
 
 type RouteType = {

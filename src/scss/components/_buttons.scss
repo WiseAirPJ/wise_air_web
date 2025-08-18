@@ -1,6 +1,57 @@
+@use "@/scss/base/color" as color;
+
 button {
   cursor: pointer;
   &:active {
     transform: scale(0.98);
+  }
+}
+
+%main_button {
+  background-color: color.$color-main;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  color: color.$color-white;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+%hand_moving_button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .hand_moving_icon {
+    width: 30px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: color.$color-middle-grey;
+  }
+}
+
+%tab_button {
+  min-width: 60px;
+  width: auto;
+  height: 25px;
+  border: none;
+  border-radius: 10px;
+  background-color: color.$color-middle-grey;
+  color: color.$color-font-dark-grey;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+
+  &.active {
+    background-color: color.$color-main;
+    color: color.$color-white;
   }
 }

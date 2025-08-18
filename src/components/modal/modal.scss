@@ -1,0 +1,28 @@
+@use "@/scss/base/color" as color;
+@use "@/scss/base/base" as base;
+
+.input_in_modal {
+  width: max-content;
+  background-color: color.$color-white;
+  border-radius: 6px;
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  position: absolute;
+  z-index: 10;
+
+  @extend %shadow;
+
+  &.travel_date {
+    left: 0;
+  }
+
+  &.stay_duration {
+    right: 0;
+  }
+
+  select {
+    min-width: max-content;
+  }
+}
