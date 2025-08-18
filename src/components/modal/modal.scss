@@ -9,18 +9,18 @@
   display: flex;
   gap: 10px;
   padding: 10px;
-  position: absolute;
-  z-index: 10;
+  position: fixed;
+  z-index: base.$modal-z-index-depth2;
 
   @extend %shadow;
 
-  &.travel_date {
-    left: 0;
-  }
+  // &.travel_date {
+  //   left: 0;
+  // }
 
-  &.stay_duration {
-    right: 0;
-  }
+  // &.stay_duration {
+  //   right: 0;
+  // }
 
   select {
     min-width: max-content;

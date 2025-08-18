@@ -3,13 +3,50 @@
 
 .flight_inputs {
   @extend %shadow;
-  position: fixed;
-  z-index: 800;
+  position: absolute;
+  z-index: base.$modal-z-index-depth1;
   top: 0;
+  width: 100%;
   border-radius: 0 0 20px 20px;
-  padding: 20px 20px 30px 20px;
+  padding: 20px 20px 30px 20px; // 하단 핸들 여유
   background-color: color.$color-white;
+  overflow: hidden; // 드래그 중 넘침 방지
+  will-change: height;
 
+  &.is-dragging {
+    cursor: grabbing;
+    // 인라인 style에서 transition 제어하지만, 혹시 대비용
+    transition: none !important;
+  }
+
+  // /* 드래그 핸들 */
+  // .drag_handle {
+  //   position: absolute;
+  //   left: 50%;
+  //   bottom: -12px; // 살짝 밖으로
+  //   transform: translateX(-50%);
+  //   width: 72px;
+  //   height: 24px;
+  //   display: grid;
+  //   place-items: center;
+  //   cursor: grab;
+  //   touch-action: none; // 모바일 스크롤 대신 드래그 인식
+  //   user-select: none;
+  //   pointer-events: auto;
+
+  //   /* 핸들 바 (HandMovingButton 내부에 바가 없어도 보이게) */
+  //   &::before {
+  //     content: "";
+  //     display: block;
+  //     width: 42px;
+  //     height: 5px;
+  //     border-radius: 999px;
+  //     background: #c9d3e1;
+  //     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+  //   }
+  // }
+
+  /* 작은 폼 레이아웃 */
   .small_input_group {
     display: flex;
     flex-direction: column;
@@ -28,6 +65,7 @@
     }
   }
 
+  /* 큰 폼 레이아웃 */
   .big_input_group {
     display: flex;
     flex-direction: column;
